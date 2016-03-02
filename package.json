@@ -1,0 +1,31 @@
+{
+  "name": "easy-redis",
+  "version": "0.1.0",
+  "description": "Just write a config file,you can get one of redis connection with different topic",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EricPoker/easy-redis.git"
+  },
+  "keywords": [
+    "redis",
+    "config"
+  ],
+  "author": "Eric Poker <306766053@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricPoker/easy-redis/issues"
+  },
+  "homepage": "https://github.com/EricPoker/easy-redis",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.3.3",
+    "redis": "^2.4.2"
+  }
+}
