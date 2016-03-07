@@ -10,8 +10,7 @@ Just write a config file,you can get one of redis connection with different topi
     
     //use bluebird to promise redis package
     
-    var redis = require('easy-redis');
-    redis.init(`${__dirname}/redisConfig.json`);
+    var redis = require('easy-redis')(`${__dirname}/redisConfig.json`);
     redis.getConnect('localhost').setAsync('test', 'oops').then((result) => {
         //dosomething
     })
