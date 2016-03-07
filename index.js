@@ -8,13 +8,14 @@ let config;
 
 module.exports = EasyRedis;
 
-function EasyRedis() {
+function EasyRedis(filePath) {
     if (!(this instanceof EasyRedis)) {
-        return new EasyRedis();
+        return new EasyRedis(filePath);
     }
+    init(filePath);
 }
 
-EasyRedis.prototype.init = function (filePath) {
+function init (filePath) {
     let exists = fs.existsSync(filePath);
     if (exists) {
         config = require(filePath);

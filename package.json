@@ -1,6 +1,6 @@
 {
   "name": "easy-redis",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Just write a config file,you can get one of redis connection with different topic",
   "main": "index.js",
   "scripts": {
