@@ -14,4 +14,14 @@ describe('index', function () {
             done();
         })
     })
+    it('with a env opts', function (done) {
+        let opts = {
+            env: 'dev'
+        }
+        let env_redis = require('../index')(`${__dirname}/redisConfig.json`, opts);
+        env_redis.getConnect('localhost').setAsync('test', 'oops').then((result) => {
+            result.should.equal('OK');
+            done();
+        })
+    })
 })

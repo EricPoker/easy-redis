@@ -8,17 +8,19 @@ let config;
 
 module.exports = EasyRedis;
 
-function EasyRedis(filePath) {
+function EasyRedis(filePath, opts) {
     if (!(this instanceof EasyRedis)) {
-        return new EasyRedis(filePath);
+        return new EasyRedis(filePath, opts);
     }
-    init(filePath);
+    init(filePath, opts);
 }
 
-function init (filePath) {
+function init (filePath, opts) {
     let exists = fs.existsSync(filePath);
     if (exists) {
-        config = require(filePath);
+        let _opts = opts || {};
+        let env = _opts.env || null;
+        config = env ? require(filePath)[env] : require(filePath);
         if ((typeof config) === 'object') {
             return true
         }
