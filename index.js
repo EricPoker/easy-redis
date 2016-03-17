@@ -12,6 +12,7 @@ function EasyRedis(filePath, opts) {
     if (!(this instanceof EasyRedis)) {
         return new EasyRedis(filePath, opts);
     }
+    this.opts = opts || {};
     init(filePath, opts);
 }
 
@@ -29,5 +30,5 @@ function init (filePath, opts) {
 }
 
 EasyRedis.prototype.getConnect = function (name) {
-    return redis.getInstance(name, config);
+    return redis.getInstance(name, config, this.opts);
 }
